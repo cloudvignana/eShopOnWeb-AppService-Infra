@@ -36,8 +36,8 @@ resource "azurerm_service_plan" "appserviceplan-hw" {
 # Create the web app, pass in the App Service Plan ID
 resource "azurerm_linux_web_app" "webapp" {
   name                  = "webapp-${random_integer.ri.result}"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
+  location              = var.appserviceplan_location
+  resource_group_name   = var.resource_group_name
   service_plan_id       = azurerm_service_plan.appserviceplan-hw.id
   depends_on            = [azurerm_service_plan.appserviceplan-hw]
   https_only            = true
