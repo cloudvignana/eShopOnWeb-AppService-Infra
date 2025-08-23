@@ -4,9 +4,20 @@ variable "resource_group_name" {
   default     = "MainRG-Paid1"
 }
 
+variable "appserviceplan_name" {
+  description = "App Service Plan name"
+  type        = string
+  default     = "devsecops-hw-web-appserviceplan"
+}
+
+variable "appservice_webapp_name" {
+  description = "App Service Web app farm name"
+  type        = string
+  default     = "devsecops-hw-web-appservicefarm"
+}
 
 variable "appserviceplan_location" {
-  description = "Primary location for all resources"
+  description = "App Service Plan Location"
   type        = string
   default     = "South India"
 }
