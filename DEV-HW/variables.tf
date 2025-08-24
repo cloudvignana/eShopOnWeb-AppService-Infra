@@ -28,3 +28,29 @@ variable "appserviceplan_sku" {
   type        = string
   default     = "F1"
 }
+
+
+# AZ Service Principal Variables
+variable "ARM_CLIENT_ID" {
+  description = "The client Id for Azure authentication."
+  type        = string
+  sensitive   = true # Mark as sensitive to prevent logging of the value
+}
+
+variable "ARM_CLIENT_SECRET" {
+  description = "The client secret for Azure authentication."
+  type        = string
+  sensitive   = true # Mark as sensitive to prevent logging of the value
+}
+
+variable "ARM_TENANT_ID" {
+  description = "The Tenant Id  for Azure authentication."
+  type        = string
+  sensitive   = true # Mark as sensitive to prevent logging of the value
+}
+
+variable "ARM_SUBSCRIPTION_ID" {
+  description = "Azure subscription id"
+  type        = string
+  sensitive   = true # Mark as sensitive to prevent logging of the value
+}
