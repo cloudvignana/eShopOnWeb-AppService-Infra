@@ -1,0 +1,926 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"azurerm_app_service_source_control": {
+				"sourcecontrol": {
+					0: {
+						"destroy": true,
+						"diff": {
+							"app_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "/subscriptions/29446bef-9ee0-4789-9951-69920a8bb4d2/resourceGroups/MainRG-Paid1/providers/Microsoft.Web/sites/webapp-devsecops-hw-web-appservicefarm",
+							},
+							"branch": {
+								"computed": false,
+								"new":      "",
+								"old":      "main",
+							},
+							"github_action_configuration.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"id": {
+								"computed": false,
+								"new":      "",
+								"old":      "/subscriptions/29446bef-9ee0-4789-9951-69920a8bb4d2/resourceGroups/MainRG-Paid1/providers/Microsoft.Web/sites/webapp-devsecops-hw-web-appservicefarm",
+							},
+							"repo_url": {
+								"computed": false,
+								"new":      "",
+								"old":      "https://github.com/Azure-Samples/nodejs-docs-hello-world",
+							},
+							"rollback_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"scm_type": {
+								"computed": false,
+								"new":      "",
+								"old":      "ExternalGit",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"use_local_git": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"use_manual_integration": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"use_mercurial": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"uses_github_action": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_linux_web_app": {
+				"webapp": {
+					0: {
+						"destroy": true,
+						"diff": {
+							"app_settings.%": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"auth_settings.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"auth_settings_v2.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"backup.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"client_affinity_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"client_certificate_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"client_certificate_exclusion_paths": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"client_certificate_mode": {
+								"computed": false,
+								"new":      "",
+								"old":      "Required",
+							},
+							"connection_string.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"custom_domain_verification_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "REDACTED_SENSITIVE",
+							},
+							"default_hostname": {
+								"computed": false,
+								"new":      "",
+								"old":      "webapp-devsecops-hw-web-appservicefarm.azurewebsites.net",
+							},
+							"enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"ftp_publish_basic_authentication_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"hosting_environment_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"https_only": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"id": {
+								"computed": false,
+								"new":      "",
+								"old":      "/subscriptions/29446bef-9ee0-4789-9951-69920a8bb4d2/resourceGroups/MainRG-Paid1/providers/Microsoft.Web/sites/webapp-devsecops-hw-web-appservicefarm",
+							},
+							"identity.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"key_vault_reference_identity_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "SystemAssigned",
+							},
+							"kind": {
+								"computed": false,
+								"new":      "",
+								"old":      "app,linux",
+							},
+							"location": {
+								"computed": false,
+								"new":      "",
+								"old":      "polandcentral",
+							},
+							"logs.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"name": {
+								"computed": false,
+								"new":      "",
+								"old":      "webapp-devsecops-hw-web-appservicefarm",
+							},
+							"outbound_ip_address_list.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "13",
+							},
+							"outbound_ip_address_list.0": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.249.213",
+							},
+							"outbound_ip_address_list.1": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.177.201",
+							},
+							"outbound_ip_address_list.10": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.83.74",
+							},
+							"outbound_ip_address_list.11": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.11.70",
+							},
+							"outbound_ip_address_list.12": {
+								"computed": false,
+								"new":      "",
+								"old":      "20.215.12.3",
+							},
+							"outbound_ip_address_list.2": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.8.29",
+							},
+							"outbound_ip_address_list.3": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.80.188",
+							},
+							"outbound_ip_address_list.4": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.72.174",
+							},
+							"outbound_ip_address_list.5": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.73.133",
+							},
+							"outbound_ip_address_list.6": {
+								"computed": false,
+								"new":      "",
+								"old":      "20.215.142.229",
+							},
+							"outbound_ip_address_list.7": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.83.238",
+							},
+							"outbound_ip_address_list.8": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.84.12",
+							},
+							"outbound_ip_address_list.9": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.11.66",
+							},
+							"outbound_ip_addresses": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.249.213,74.248.177.201,134.112.8.29,134.112.80.188,74.248.72.174,74.248.73.133,20.215.142.229,134.112.83.238,134.112.84.12,134.112.11.66,134.112.83.74,134.112.11.70,20.215.12.3",
+							},
+							"possible_outbound_ip_address_list.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "31",
+							},
+							"possible_outbound_ip_address_list.0": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.249.213",
+							},
+							"possible_outbound_ip_address_list.1": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.177.201",
+							},
+							"possible_outbound_ip_address_list.10": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.83.74",
+							},
+							"possible_outbound_ip_address_list.11": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.11.70",
+							},
+							"possible_outbound_ip_address_list.12": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.84.227",
+							},
+							"possible_outbound_ip_address_list.13": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.253.114",
+							},
+							"possible_outbound_ip_address_list.14": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.253.128",
+							},
+							"possible_outbound_ip_address_list.15": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.76.66",
+							},
+							"possible_outbound_ip_address_list.16": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.85.2",
+							},
+							"possible_outbound_ip_address_list.17": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.253.130",
+							},
+							"possible_outbound_ip_address_list.18": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.11.74",
+							},
+							"possible_outbound_ip_address_list.19": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.85.65",
+							},
+							"possible_outbound_ip_address_list.2": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.8.29",
+							},
+							"possible_outbound_ip_address_list.20": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.76.99",
+							},
+							"possible_outbound_ip_address_list.21": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.177.160",
+							},
+							"possible_outbound_ip_address_list.22": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.177.163",
+							},
+							"possible_outbound_ip_address_list.23": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.81.156",
+							},
+							"possible_outbound_ip_address_list.24": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.251.218",
+							},
+							"possible_outbound_ip_address_list.25": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.82.55",
+							},
+							"possible_outbound_ip_address_list.26": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.82.177",
+							},
+							"possible_outbound_ip_address_list.27": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.83.110",
+							},
+							"possible_outbound_ip_address_list.28": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.75.136",
+							},
+							"possible_outbound_ip_address_list.29": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.177.254",
+							},
+							"possible_outbound_ip_address_list.3": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.80.188",
+							},
+							"possible_outbound_ip_address_list.30": {
+								"computed": false,
+								"new":      "",
+								"old":      "20.215.12.3",
+							},
+							"possible_outbound_ip_address_list.4": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.72.174",
+							},
+							"possible_outbound_ip_address_list.5": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.73.133",
+							},
+							"possible_outbound_ip_address_list.6": {
+								"computed": false,
+								"new":      "",
+								"old":      "20.215.142.229",
+							},
+							"possible_outbound_ip_address_list.7": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.83.238",
+							},
+							"possible_outbound_ip_address_list.8": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.84.12",
+							},
+							"possible_outbound_ip_address_list.9": {
+								"computed": false,
+								"new":      "",
+								"old":      "134.112.11.66",
+							},
+							"possible_outbound_ip_addresses": {
+								"computed": false,
+								"new":      "",
+								"old":      "74.248.249.213,74.248.177.201,134.112.8.29,134.112.80.188,74.248.72.174,74.248.73.133,20.215.142.229,134.112.83.238,134.112.84.12,134.112.11.66,134.112.83.74,134.112.11.70,134.112.84.227,74.248.253.114,74.248.253.128,74.248.76.66,134.112.85.2,74.248.253.130,134.112.11.74,134.112.85.65,74.248.76.99,74.248.177.160,74.248.177.163,134.112.81.156,74.248.251.218,134.112.82.55,134.112.82.177,134.112.83.110,74.248.75.136,74.248.177.254,20.215.12.3",
+							},
+							"public_network_access_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "MainRG-Paid1",
+							},
+							"service_plan_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "/subscriptions/29446bef-9ee0-4789-9951-69920a8bb4d2/resourceGroups/MainRG-Paid1/providers/Microsoft.Web/serverFarms/webapp-asp-devsecops-hw-web-appserviceplan",
+							},
+							"site_config.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "1",
+							},
+							"site_config.0.%": {
+								"computed": false,
+								"new":      "",
+								"old":      "33",
+							},
+							"site_config.0.always_on": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.api_definition_url": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.api_management_api_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.app_command_line": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "1",
+							},
+							"site_config.0.application_stack.0.%": {
+								"computed": false,
+								"new":      "",
+								"old":      "13",
+							},
+							"site_config.0.application_stack.0.docker_image_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.docker_registry_password": {
+								"computed": false,
+								"new":      "",
+								"old":      "REDACTED_SENSITIVE",
+							},
+							"site_config.0.application_stack.0.docker_registry_url": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.docker_registry_username": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.dotnet_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.go_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.java_server": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.java_server_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.java_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.node_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "16-lts",
+							},
+							"site_config.0.application_stack.0.php_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.python_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.application_stack.0.ruby_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.auto_heal_setting.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"site_config.0.container_registry_managed_identity_client_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.container_registry_use_managed_identity": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.cors.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"site_config.0.default_documents.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "9",
+							},
+							"site_config.0.default_documents.0": {
+								"computed": false,
+								"new":      "",
+								"old":      "Default.htm",
+							},
+							"site_config.0.default_documents.1": {
+								"computed": false,
+								"new":      "",
+								"old":      "Default.html",
+							},
+							"site_config.0.default_documents.2": {
+								"computed": false,
+								"new":      "",
+								"old":      "Default.asp",
+							},
+							"site_config.0.default_documents.3": {
+								"computed": false,
+								"new":      "",
+								"old":      "index.htm",
+							},
+							"site_config.0.default_documents.4": {
+								"computed": false,
+								"new":      "",
+								"old":      "index.html",
+							},
+							"site_config.0.default_documents.5": {
+								"computed": false,
+								"new":      "",
+								"old":      "iisstart.htm",
+							},
+							"site_config.0.default_documents.6": {
+								"computed": false,
+								"new":      "",
+								"old":      "default.aspx",
+							},
+							"site_config.0.default_documents.7": {
+								"computed": false,
+								"new":      "",
+								"old":      "index.php",
+							},
+							"site_config.0.default_documents.8": {
+								"computed": false,
+								"new":      "",
+								"old":      "hostingstart.html",
+							},
+							"site_config.0.detailed_error_logging_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.ftps_state": {
+								"computed": false,
+								"new":      "",
+								"old":      "Disabled",
+							},
+							"site_config.0.health_check_eviction_time_in_min": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"site_config.0.health_check_path": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"site_config.0.http2_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.ip_restriction.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"site_config.0.ip_restriction_default_action": {
+								"computed": false,
+								"new":      "",
+								"old":      "Allow",
+							},
+							"site_config.0.linux_fx_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "NODE|16-lts",
+							},
+							"site_config.0.load_balancing_mode": {
+								"computed": false,
+								"new":      "",
+								"old":      "LeastRequests",
+							},
+							"site_config.0.local_mysql_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.managed_pipeline_mode": {
+								"computed": false,
+								"new":      "",
+								"old":      "Integrated",
+							},
+							"site_config.0.minimum_tls_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "1.2",
+							},
+							"site_config.0.remote_debugging_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.remote_debugging_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "VS2022",
+							},
+							"site_config.0.scm_ip_restriction.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"site_config.0.scm_ip_restriction_default_action": {
+								"computed": false,
+								"new":      "",
+								"old":      "Allow",
+							},
+							"site_config.0.scm_minimum_tls_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "1.2",
+							},
+							"site_config.0.scm_type": {
+								"computed": false,
+								"new":      "",
+								"old":      "ExternalGit",
+							},
+							"site_config.0.scm_use_main_ip_restriction": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.use_32_bit_worker": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"site_config.0.vnet_route_all_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.websockets_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"site_config.0.worker_count": {
+								"computed": false,
+								"new":      "",
+								"old":      "1",
+							},
+							"site_credential": {
+								"computed": false,
+								"new":      "",
+								"old":      "REDACTED_SENSITIVE",
+							},
+							"sticky_settings.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"storage_account.#": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"virtual_network_backup_restore_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"virtual_network_subnet_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vnet_image_pull_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"webdeploy_publish_basic_authentication_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"zip_deploy_file": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_service_plan": {
+				"appserviceplan-hw": {
+					0: {
+						"destroy": true,
+						"diff": {
+							"app_service_environment_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": false,
+								"new":      "",
+								"old":      "/subscriptions/29446bef-9ee0-4789-9951-69920a8bb4d2/resourceGroups/MainRG-Paid1/providers/Microsoft.Web/serverFarms/webapp-asp-devsecops-hw-web-appserviceplan",
+							},
+							"kind": {
+								"computed": false,
+								"new":      "",
+								"old":      "linux",
+							},
+							"location": {
+								"computed": false,
+								"new":      "",
+								"old":      "polandcentral",
+							},
+							"maximum_elastic_worker_count": {
+								"computed": false,
+								"new":      "",
+								"old":      "1",
+							},
+							"name": {
+								"computed": false,
+								"new":      "",
+								"old":      "webapp-asp-devsecops-hw-web-appserviceplan",
+							},
+							"os_type": {
+								"computed": false,
+								"new":      "",
+								"old":      "Linux",
+							},
+							"per_site_scaling_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"premium_plan_auto_scale_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+							"reserved": {
+								"computed": false,
+								"new":      "",
+								"old":      "true",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "MainRG-Paid1",
+							},
+							"sku_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "F1",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "",
+								"old":      "0",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"worker_count": {
+								"computed": false,
+								"new":      "",
+								"old":      "1",
+							},
+							"zone_balancing_enabled": {
+								"computed": false,
+								"new":      "",
+								"old":      "false",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.13.0"
+
+variables = {
+	"ARM_CLIENT_ID":           "REDACTED_SENSITIVE",
+	"ARM_CLIENT_SECRET":       "REDACTED_SENSITIVE",
+	"ARM_SUBSCRIPTION_ID":     "REDACTED_SENSITIVE",
+	"ARM_TENANT_ID":           "REDACTED_SENSITIVE",
+	"appservice_webapp_name":  "devsecops-hw-web-appservicefarm",
+	"appserviceplan_location": "Poland Central",
+	"appserviceplan_name":     "devsecops-hw-web-appserviceplan",
+	"appserviceplan_sku":      "F1",
+	"resource_group_name":     "MainRG-Paid1",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

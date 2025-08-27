@@ -1,0 +1,218 @@
+import "strings"
+
+providers = {
+	"azurerm": {
+		"alias": "",
+		"config": {
+			"features": [
+				{},
+			],
+		},
+		"full_name":           "registry.terraform.io/hashicorp/azurerm",
+		"module_address":      "",
+		"name":                "azurerm",
+		"provider_config_key": "azurerm",
+		"version_constraint":  "~> 4.41.0",
+	},
+}
+
+resources = {
+	"azurerm_app_service_source_control.sourcecontrol": {
+		"address": "azurerm_app_service_source_control.sourcecontrol",
+		"config": {
+			"app_id": {
+				"references": [
+					"azurerm_linux_web_app.webapp.id",
+					"azurerm_linux_web_app.webapp",
+				],
+			},
+			"branch": {
+				"constant_value": "main",
+			},
+			"repo_url": {
+				"constant_value": "https://github.com/Azure-Samples/nodejs-docs-hello-world",
+			},
+			"use_manual_integration": {
+				"constant_value": true,
+			},
+			"use_mercurial": {
+				"constant_value": false,
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "sourcecontrol",
+		"provider_config_key": "azurerm",
+		"provisioners":        [],
+		"type":                "azurerm_app_service_source_control",
+	},
+	"azurerm_linux_web_app.webapp": {
+		"address": "azurerm_linux_web_app.webapp",
+		"config": {
+			"https_only": {
+				"constant_value": true,
+			},
+			"location": {
+				"references": [
+					"var.appserviceplan_location",
+				],
+			},
+			"name": {
+				"references": [
+					"var.appservice_webapp_name",
+				],
+			},
+			"resource_group_name": {
+				"references": [
+					"var.resource_group_name",
+				],
+			},
+			"service_plan_id": {
+				"references": [
+					"azurerm_service_plan.appserviceplan-hw.id",
+					"azurerm_service_plan.appserviceplan-hw",
+				],
+			},
+			"site_config": [
+				{
+					"always_on": {
+						"constant_value": false,
+					},
+					"application_stack": [
+						{
+							"node_version": {
+								"constant_value": "16-lts",
+							},
+						},
+					],
+					"minimum_tls_version": {
+						"constant_value": "1.2",
+					},
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"azurerm_service_plan.appserviceplan-hw",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "webapp",
+		"provider_config_key": "azurerm",
+		"provisioners":        [],
+		"type":                "azurerm_linux_web_app",
+	},
+	"azurerm_service_plan.appserviceplan-hw": {
+		"address": "azurerm_service_plan.appserviceplan-hw",
+		"config": {
+			"location": {
+				"references": [
+					"var.appserviceplan_location",
+				],
+			},
+			"name": {
+				"references": [
+					"var.appserviceplan_name",
+				],
+			},
+			"os_type": {
+				"constant_value": "Linux",
+			},
+			"resource_group_name": {
+				"references": [
+					"var.resource_group_name",
+				],
+			},
+			"sku_name": {
+				"references": [
+					"var.appserviceplan_sku",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "appserviceplan-hw",
+		"provider_config_key": "azurerm",
+		"provisioners":        [],
+		"type":                "azurerm_service_plan",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"ARM_CLIENT_ID": {
+		"default":        null,
+		"description":    "The client Id for Azure authentication.",
+		"module_address": "",
+		"name":           "ARM_CLIENT_ID",
+	},
+	"ARM_CLIENT_SECRET": {
+		"default":        null,
+		"description":    "The client secret for Azure authentication.",
+		"module_address": "",
+		"name":           "ARM_CLIENT_SECRET",
+	},
+	"ARM_SUBSCRIPTION_ID": {
+		"default":        null,
+		"description":    "Azure subscription id",
+		"module_address": "",
+		"name":           "ARM_SUBSCRIPTION_ID",
+	},
+	"ARM_TENANT_ID": {
+		"default":        null,
+		"description":    "The Tenant Id  for Azure authentication.",
+		"module_address": "",
+		"name":           "ARM_TENANT_ID",
+	},
+	"appservice_webapp_name": {
+		"default":        "devsecops-hw-web-appservicefarm",
+		"description":    "App Service Web app farm name",
+		"module_address": "",
+		"name":           "appservice_webapp_name",
+	},
+	"appserviceplan_location": {
+		"default":        "South India",
+		"description":    "App Service Plan Location",
+		"module_address": "",
+		"name":           "appserviceplan_location",
+	},
+	"appserviceplan_name": {
+		"default":        "devsecops-hw-web-appserviceplan",
+		"description":    "App Service Plan name",
+		"module_address": "",
+		"name":           "appserviceplan_name",
+	},
+	"appserviceplan_sku": {
+		"default":        "F1",
+		"description":    "App Service Plan SKU",
+		"module_address": "",
+		"name":           "appserviceplan_sku",
+	},
+	"resource_group_name": {
+		"default":        "MainRG-Paid1",
+		"description":    "Name of the resource group",
+		"module_address": "",
+		"name":           "resource_group_name",
+	},
+}
+
+outputs = {}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}

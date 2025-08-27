@@ -1,0 +1,22 @@
+import "tfplan/v2" as tfplan
+
+# Define the allowed regions
+allowed_regions = ["polandcentral","indonesiacentral"]
+
+# Define the rule to check resource locations
+resource_location_check = rule {
+  all tfplan.resource_changes as _, resource {
+    # Only evaluate managed resources that are being created or updated
+    resource.change.actions != "delete" and
+    resource.mode == "managed" and
+    (resource.change.actions contains "create" or resource.change.actions contains "update") and
+    # Check if the resource has a 'location' attribute and if it's within the allowed regions
+    resource.change.after.location is "string" and
+    resource.change.after.location in allowed_regions
+  }
+}
+
+# The main rule that evaluates the policy
+main = rule {
+ resource_location_check
+}

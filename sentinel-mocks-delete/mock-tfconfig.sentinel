@@ -1,0 +1,199 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data":    {},
+		"modules": {},
+		"outputs": {},
+		"providers": {
+			"azurerm": {
+				"alias": {
+					"": {
+						"config": {
+							"features": [
+								{},
+							],
+						},
+						"references": {
+							"features": [
+								{},
+							],
+						},
+						"version": "~> 4.41.0",
+					},
+				},
+				"config": {
+					"features": [
+						{},
+					],
+				},
+				"references": {
+					"features": [
+						{},
+					],
+				},
+				"version": "~> 4.41.0",
+			},
+		},
+		"resources": {
+			"azurerm_app_service_source_control": {
+				"sourcecontrol": {
+					"config": {
+						"branch":                 "main",
+						"repo_url":               "https://github.com/Azure-Samples/nodejs-docs-hello-world",
+						"use_manual_integration": true,
+						"use_mercurial":          false,
+					},
+					"provisioners": null,
+					"references": {
+						"app_id": [
+							"azurerm_linux_web_app.webapp.id",
+							"azurerm_linux_web_app.webapp",
+						],
+						"branch":                 [],
+						"repo_url":               [],
+						"use_manual_integration": [],
+						"use_mercurial":          [],
+					},
+				},
+			},
+			"azurerm_linux_web_app": {
+				"webapp": {
+					"config": {
+						"https_only": true,
+						"site_config": [
+							{
+								"always_on": false,
+								"application_stack": [
+									{
+										"node_version": "16-lts",
+									},
+								],
+								"minimum_tls_version": "1.2",
+							},
+						],
+					},
+					"provisioners": null,
+					"references": {
+						"https_only": [],
+						"location": [
+							"var.appserviceplan_location",
+						],
+						"name": [
+							"var.appservice_webapp_name",
+						],
+						"resource_group_name": [
+							"var.resource_group_name",
+						],
+						"service_plan_id": [
+							"azurerm_service_plan.appserviceplan-hw.id",
+							"azurerm_service_plan.appserviceplan-hw",
+						],
+						"site_config": [
+							{
+								"always_on": [],
+								"application_stack": [
+									{
+										"node_version": [],
+									},
+								],
+								"minimum_tls_version": [],
+							},
+						],
+					},
+				},
+			},
+			"azurerm_service_plan": {
+				"appserviceplan-hw": {
+					"config": {
+						"os_type": "Linux",
+					},
+					"provisioners": null,
+					"references": {
+						"location": [
+							"var.appserviceplan_location",
+						],
+						"name": [
+							"var.appserviceplan_name",
+						],
+						"os_type": [],
+						"resource_group_name": [
+							"var.resource_group_name",
+						],
+						"sku_name": [
+							"var.appserviceplan_sku",
+						],
+					},
+				},
+			},
+		},
+		"variables": {
+			"ARM_CLIENT_ID": {
+				"default":     null,
+				"description": "The client Id for Azure authentication.",
+			},
+			"ARM_CLIENT_SECRET": {
+				"default":     null,
+				"description": "The client secret for Azure authentication.",
+			},
+			"ARM_SUBSCRIPTION_ID": {
+				"default":     null,
+				"description": "Azure subscription id",
+			},
+			"ARM_TENANT_ID": {
+				"default":     null,
+				"description": "The Tenant Id  for Azure authentication.",
+			},
+			"appservice_webapp_name": {
+				"default":     "devsecops-hw-web-appservicefarm",
+				"description": "App Service Web app farm name",
+			},
+			"appserviceplan_location": {
+				"default":     "South India",
+				"description": "App Service Plan Location",
+			},
+			"appserviceplan_name": {
+				"default":     "devsecops-hw-web-appserviceplan",
+				"description": "App Service Plan name",
+			},
+			"appserviceplan_sku": {
+				"default":     "F1",
+				"description": "App Service Plan SKU",
+			},
+			"resource_group_name": {
+				"default":     "MainRG-Paid1",
+				"description": "Name of the resource group",
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

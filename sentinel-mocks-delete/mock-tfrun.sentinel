@@ -1,0 +1,76 @@
+id = "run-vKiHk8EJM4hiXjcp"
+created_at = "2025-08-27T09:43:28.537Z"
+created_by = "sairamkrishnalakkoju"
+message = "Triggered via UI"
+commit_sha = "410a0028d1f591b9d722f8438423248f04e175fa"
+speculative = false
+is_destroy = true
+refresh = true
+refresh_only = false
+replace_addrs = []
+target_addrs = null
+project = {
+	"id":   "prj-pHDQpaVvPf66GqGa",
+	"name": "devsecops-lab",
+}
+
+variables = {
+	"ARM_CLIENT_ID": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+	"ARM_CLIENT_SECRET": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+	"ARM_SUBSCRIPTION_ID": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"ARM_TENANT_ID": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+	"appservice_webapp_name": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"appserviceplan_location": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"appserviceplan_name": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"appserviceplan_sku": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"resource_group_name": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+}
+
+organization = {
+	"name": "devsecops-lab-srkl",
+}
+
+workspace = {
+	"auto_apply":     false,
+	"created_at":     "2025-08-23T08:33:46.938Z",
+	"description":    null,
+	"execution_mode": "default",
+	"id":             "ws-84qL5m6v5SZE1wA1",
+	"name":           "eShopOnWeb-AppService-Infra",
+	"tag_bindings":   [],
+	"tags":           [],
+	"vcs_repo": {
+		"branch":             "main",
+		"display_identifier": "cloudvignana/eShopOnWeb-AppService-Infra",
+		"identifier":         "cloudvignana/eShopOnWeb-AppService-Infra",
+		"ingress_submodules": false,
+	},
+	"working_directory": "DEV-HW",
+}
